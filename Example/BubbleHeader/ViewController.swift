@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  BubbleHeader
 //
-//  Created by ramonstarcut on 12/17/2018.
-//  Copyright (c) 2018 ramonstarcut. All rights reserved.
+//  Created by Ramon Vasconcelos on 12/17/2018.
+//  Copyright (c) 2018 Ramon Vasconcelos. All rights reserved.
 //
 
 import UIKit

@@ -1,6 +1,6 @@
 # BubbleHeader
 
-[![CI Status](https://img.shields.io/travis/ramonstarcut/BubbleHeader.svg?style=flat)](https://travis-ci.org/ramonstarcut/BubbleHeader)
+[![CI Status](https://img.shields.io/travis/ramonvasc/BubbleHeader.svg?style=flat)](https://travis-ci.org/ramonvasc/BubbleHeader)
 [![Version](https://img.shields.io/cocoapods/v/BubbleHeader.svg?style=flat)](https://cocoapods.org/pods/BubbleHeader)
 [![License](https://img.shields.io/cocoapods/l/BubbleHeader.svg?style=flat)](https://cocoapods.org/pods/BubbleHeader)
 [![Platform](https://img.shields.io/cocoapods/p/BubbleHeader.svg?style=flat)](https://cocoapods.org/pods/BubbleHeader)
@@ -22,7 +22,7 @@ pod 'BubbleHeader'
 
 ## Author
 
-ramonstarcut, ramonvasc@gmail.com
+Ramon Vasconcelos, ramonvasc@gmail.com
 
 ## License
 
