@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MenuCell: UICollectionViewCell {
+public class MenuCell: UICollectionViewCell {
 
     private let shadowView = UIView()
     private let imageView = UIImageView()
@@ -15,6 +15,7 @@ class MenuCell: UICollectionViewCell {
     private var value: MenuItem!
 
     // MARK: - Init
+
     private func updateView() {
         addCellViews()
         setupConstraints()
@@ -23,11 +24,11 @@ class MenuCell: UICollectionViewCell {
 
     func setBorders() {
         backgroundView?.layer.cornerRadius = (backgroundView?.frame.height)! / 2
-        backgroundView?.layer.borderColor = value.selectedBorderColor.cgColor
-        backgroundView?.layer.borderWidth = value.selectedBorderWidth
+        backgroundView?.layer.borderColor = value?.selectedBorderColor.cgColor
+        backgroundView?.layer.borderWidth = value?.selectedBorderWidth ?? 3
 
         shadowView.layer.cornerRadius = (backgroundView?.frame.height)! / 2
-        shadowView.layer.borderColor = value.shadowColor.cgColor
+        shadowView.layer.borderColor = value?.shadowColor.cgColor
         shadowView.layer.borderWidth = 1
     }
 
@@ -39,8 +40,8 @@ class MenuCell: UICollectionViewCell {
         contentView.addSubview(imageView)
         nameLabel.textAlignment = .center
         nameLabel.numberOfLines = 0
-        nameLabel.textColor = value.textColor
-        nameLabel.font = value.textFont
+        nameLabel.textColor = value?.textColor
+        nameLabel.font = value?.textFont
         contentView.addSubview(nameLabel)
     }
 
@@ -68,20 +69,18 @@ class MenuCell: UICollectionViewCell {
         shadowView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 1).isActive = true
     }
 
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
-        value = MenuItem(name: "", image: UIImage(named: "")!)
         updateView()
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        value = MenuItem(name: "", image: UIImage(named: "")!)
         updateView()
     }
 
     // MARK: - Reuse
-    override func prepareForReuse() {
+    override public func prepareForReuse() {
         super.prepareForReuse()
 
         value = nil
@@ -93,6 +92,7 @@ class MenuCell: UICollectionViewCell {
         imageView.image = value.image.withRenderingMode(.alwaysTemplate)
         imageView.highlightedImage = value.highlightedImage
         shadowView.backgroundColor = value.shadowColor
+        backgroundColor = value.backgroundColor
         nameLabel.text = value.name
         updateView()
         updateSelectionVisibility()
@@ -102,17 +102,18 @@ class MenuCell: UICollectionViewCell {
     private func updateSelectionVisibility() {
         imageView.isHighlighted = isSelected
         backgroundView?.backgroundColor = isSelected ? value?.highlightedBackgroundColor : value?.backgroundColor
-        backgroundView?.layer.borderColor = isSelected ? value.selectedBorderColor.cgColor : value.unselectedBorderColor.cgColor
-        backgroundView?.layer.borderWidth = isSelected ? value.selectedBorderWidth : value.unselectedBorderWidth
-        imageView.tintColor = isSelected ? value.selectedTintColor : value.unselectedTintColor
+        backgroundView?.layer.borderColor = isSelected ? value?.selectedBorderColor.cgColor : value?.unselectedBorderColor.cgColor
+        backgroundView?.layer.borderWidth = isSelected ? value?.selectedBorderWidth ?? 3 : value?.unselectedBorderWidth ?? 0
+        imageView.tintColor = isSelected ? value?.selectedTintColor : value?.unselectedTintColor
         UIView.animate(withDuration: 0.2, delay: 0.0 , options: [], animations: {
             self.transform = self.isSelected ? CGAffineTransform(scaleX: 1.3, y: 1.3) : CGAffineTransform.identity
         }, completion: nil)
     }
 
-    override var isSelected: Bool {
+    override public var isSelected: Bool {
         didSet {
             updateSelectionVisibility()
         }
     }
+
 }

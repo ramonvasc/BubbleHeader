@@ -10,16 +10,18 @@ import UIKit
 public struct MenuItem {
 
     public var image: UIImage
-    public var highlightedImage: UIImage?
 
-    public var backgroundColor = UIColor(red: 50.0 / 255.0, green: 49.0 / 255.0, blue: 73.0 / 255.0, alpha: 1.0)
-    public var highlightedBackgroundColor = UIColor(red: 1.0, green: 61.0 / 255.0, blue: 130.0 / 255.0, alpha: 1.0)
+    public var highlightedImage: UIImage
 
-    public var shadowColor = UIColor(white: 0.1, alpha: 0.3)
+    public var backgroundColor = UIColor.clear
+
+    public var highlightedBackgroundColor = UIColor.white
+
+    public var shadowColor = UIColor(white: 0.1, alpha: 0.1)
 
     public var name: String
 
-    public var selectedBorderColor = UIColor.yellow
+    public var selectedBorderColor = UIColor.red
 
     public var unselectedBorderColor = UIColor.clear
 
@@ -33,14 +35,15 @@ public struct MenuItem {
 
     public var textColor = UIColor.black
 
-    public var textFont = UIFont.systemFont(ofSize: 12)
+    public var textFont = UIFont.systemFont(ofSize: 10)
 
     // MARK: - Init
 
-    public init(name: String, image: UIImage, highlightedImage: UIImage? = nil, selectedBorderColor: UIColor = UIColor.yellow, unselectedBorderColor: UIColor = UIColor.clear, selectedTintColor: UIColor = UIColor.blue, unselectedTintColor: UIColor = UIColor.white, textColor: UIColor = UIColor.black, selectedBorderWidth: CGFloat = 3, unselectedBorderWidth: CGFloat = 0, textFont: UIFont = UIFont.systemFont(ofSize: 12)) {
+    public init(name: String, image: UIImage, highlightedImage: UIImage, shadowColor: UIColor = UIColor(white: 0.1, alpha: 0.1), selectedBorderColor: UIColor = UIColor.red, unselectedBorderColor: UIColor = UIColor.clear, selectedTintColor: UIColor = UIColor.blue, unselectedTintColor: UIColor = UIColor.white, textColor: UIColor = UIColor.black, selectedBorderWidth: CGFloat = 3, unselectedBorderWidth: CGFloat = 0, textFont: UIFont = UIFont.systemFont(ofSize: 10)) {
         self.name = name
         self.image = image
         self.highlightedImage = highlightedImage
+        self.shadowColor = shadowColor
         self.selectedBorderColor = selectedBorderColor
         self.unselectedBorderColor = unselectedBorderColor
         self.selectedTintColor = selectedTintColor

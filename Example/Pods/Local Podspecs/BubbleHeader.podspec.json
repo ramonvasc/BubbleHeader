@@ -1,22 +1,23 @@
 {
   "name": "BubbleHeader",
-  "version": "0.1.0",
+  "version": "0.0.2",
   "summary": "A short description of BubbleHeader.",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/ramonstarcut/BubbleHeader",
+  "homepage": "https://github.com/ramonvasc/BubbleHeader",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "ramonstarcut": "ramonvasc@gmail.com"
+    "Ramon Vasconcelos": "ramonvasc@gmail.com"
   },
   "source": {
-    "git": "https://github.com/ramonstarcut/BubbleHeader.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/ramonvasc/BubbleHeader.git",
+    "tag": "0.0.2"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "9.0"
   },
-  "source_files": "BubbleHeader/Classes/**/*"
+  "source_files": "BubbleHeader/Classes/**/*",
+  "requires_arc": true
 }

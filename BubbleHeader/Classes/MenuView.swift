@@ -10,7 +10,7 @@ import UIKit
 private let CellIdentifier = "MenuCell"
 private let DefaultContentHeight: CGFloat = 112.0
 
-@objc open class MenuView: StickyHeaderView {
+open class MenuView: StickyHeaderView {
 
     var selectedCell: UICollectionViewCell?
 

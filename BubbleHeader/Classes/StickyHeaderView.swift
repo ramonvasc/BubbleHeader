@@ -1,3 +1,10 @@
+//
+//  StickyHeaderView.swift
+//  BubbleHeader
+//
+//  Created by Ramon Vasconcelos on 17/12/2018.
+//
+
 import UIKit
 
 private var ContentOffsetContext = 0
@@ -47,7 +54,7 @@ open class StickyHeaderView: UIView {
 
         if let view = superview as? UIScrollView {
             view.addObserver(self, forKeyPath: #keyPath(UIScrollView.contentOffset), options: [.initial, .new], context: &ContentOffsetContext)
-            view.sendSubview(toBack: self)
+            view.sendSubviewToBack(self)
         }
     }
 
@@ -68,7 +75,7 @@ open class StickyHeaderView: UIView {
                 view.frame = contentContainer.bounds
                 view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
                 contentContainer.addSubview(view)
-                contentContainer.sendSubview(toBack: view)
+                contentContainer.sendSubviewToBack(view)
             }
         }
     }
