@@ -15,8 +15,12 @@ class BaseViewController: UIViewController {
     var menuTableView = UITableView()
     var menu: MenuView?
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        loadMenu()
+    }
+
+    func loadMenu() {
         menuTableView = UITableView(frame: view.bounds)
         menuTableView.isScrollEnabled = false
         menuTableView.backgroundColor = .clear
@@ -28,7 +32,6 @@ class BaseViewController: UIViewController {
         menu?.backgroundColor = .yellow
         menu?.revealed = true
     }
-
 }
 
 extension BaseViewController: MenuHeaderDelegate {
