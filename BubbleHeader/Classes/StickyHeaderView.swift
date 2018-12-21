@@ -54,7 +54,7 @@ open class StickyHeaderView: UIView {
 
         if let view = superview as? UIScrollView {
             view.addObserver(self, forKeyPath: #keyPath(UIScrollView.contentOffset), options: [.initial, .new], context: &ContentOffsetContext)
-            view.sendSubviewToBack(self)
+            view.sendSubview(toBack:self)
         }
     }
 
@@ -75,7 +75,7 @@ open class StickyHeaderView: UIView {
                 view.frame = contentContainer.bounds
                 view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
                 contentContainer.addSubview(view)
-                contentContainer.sendSubviewToBack(view)
+                contentContainer.sendSubview(toBack:view)
             }
         }
     }
