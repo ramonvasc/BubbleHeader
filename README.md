@@ -7,6 +7,8 @@
 
 ## Example
 
+![](BubbleHeader.gif)
+
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Installation
@@ -20,7 +22,7 @@ pod 'BubbleHeader'
 
 ## Author
 
-Ramon Vasconcelos, ramonvasc@gmail.com
+Ramon Vasconcelos
 
 ## License
 
